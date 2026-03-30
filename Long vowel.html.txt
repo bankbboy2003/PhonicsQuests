@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Vowel - ABC Phonics Sound Proud & Learn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f8bbd0);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ffccbc;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: #ff9aa2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+            background: #ff6b6b;
+        }
+
+        h1 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #4a69bd;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1.3rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        .vowel-section {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border: 3px solid #a5d6a7;
+            text-align: left;
+        }
+
+        .vowel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            background: rgba(255, 154, 162, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .vowel-icon {
+            font-size: 4rem;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            background: #ff9aa2;
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+
+        .vowel-title {
+            font-size: 2.5rem;
+            font-family: 'Comic Neue', cursive;
+            color: #e91e63;
+        }
+
+        .vowel-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vowel-description {
+            font-size: 1.5rem;
+            color: #4a69bd;
+            margin-top: 10px;
+        }
+
+        .sound-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .sound-button {
+            background: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sound-button.vowel {
+            background: #e91e63;
+        }
+
+        .sound-button:hover {
+            transform: scale(1.1);
+            background: #1e3799;
+        }
+
+        .sound-button.vowel:hover {
+            background: #c2185b;
+        }
+
+        .sound-button.playing {
+            background: #ff6b6b;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .examples-section {
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-family: 'Comic Neue', cursive;
+            text-align: center;
+        }
+
+        .word-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .word-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #a0e7e5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .word-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .word-image {
+            width: 100px;
+            height: 100px;
+            background: #b5ead7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .word-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a69bd;
+            margin-bottom: 10px;
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .word-phonetic {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .word-sound {
+            background: #ff9aa2;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 8px 15px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .word-sound:hover {
+            background: #ff6b6b;
+            transform: scale(1.05);
+        }
+
+        .rule-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #dfccfb;
+        }
+
+        .rule-title {
+            font-size: 1.8rem;
+            color: #e91e63;
+            margin-bottom: 15px;
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .rule-content {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .rule-example {
+            display: inline-block;
+            background: #ffdac1;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .interactive-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border: 3px solid #c7ceea;
+        }
+
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .game-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #dfccfb;
+        }
+
+        .game-title {
+            font-size: 1.8rem;
+            color: #e91e63;
+            margin-bottom: 20px;
+            font-family: 'Comic Neue', cursive;
+            text-align: center;
+        }
+
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vowel-option {
+            background: #b5ead7;
+            border: none;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .vowel-option:hover {
+            transform: scale(1.1);
+            background: #a0e7e5;
+        }
+
+        .vowel-option.selected {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .game-button {
+            background: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            margin: 15px auto;
+            display: block;
+            transition: all 0.3s ease;
+            font-family: 'Comic Neue', cursive;
+            font-weight: bold;
+        }
+
+        .game-button:hover {
+            background: #1e3799;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-message {
+            font-size: 1.4rem;
+            margin-top: 20px;
+            min-height: 50px;
+            font-weight: bold;
+            color: #4a69bd;
+            text-align: center;
+        }
+
+        .word-puzzle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .puzzle-letter {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffdac1;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .puzzle-blank {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 3px dashed #ff9aa2;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .puzzle-image {
+            width: 100px;
+            height: 100px;
+            background: #c7ceea;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .drag-game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vowel-group {
+            background: #ffdac1;
+            border-radius: 15px;
+            padding: 15px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .group-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .word-options-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            min-height: 100px;
+        }
+
+        .word-option {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: grab;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .word-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .word-in-group {
+            background: #a0e7e5;
+            padding: 8px 12px;
+            border-radius: 15px;
+            margin: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #a5d6a7;
+        }
+
+        .creator {
+            font-size: 1.4rem;
+            color: #e91e63;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.4rem; }
+            .vowel-header { flex-direction: column; text-align: center; }
+            .vowel-icon { margin-right: 0; margin-bottom: 15px; }
+            .vowel-title { font-size: 2rem; }
+            .vowel-description { font-size: 1.3rem; }
+            .game-container { grid-template-columns: 1fr; }
+            .rule-content { font-size: 1.1rem; }
+            .drag-game-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1.2rem; }
+            .vowel-title { font-size: 1.8rem; }
+            .vowel-description { font-size: 1.1rem; }
+            .back-button { width: 40px; height: 40px; font-size: 1.2rem; }
+            .sound-button { width: 40px; height: 40px; font-size: 1.2rem; }
+            .word-examples { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+            .drag-game-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>ABC Phonics Sound Proud & Learn</h1>
+            <div class="subtitle">เรียนรู้สระเสียงยาว (Long Vowel)</div>
+            <p class="description">สระเสียงยาวคือเสียงที่ออกเสียงยาวและเหมือนชื่อตัวอักษร มาฝึกออกเสียงกันให้ถูกต้อง!</p>
+        </div>
+        
+        <!-- Introduction to Long Vowels -->
+        <div class="vowel-section">
+            <h2 class="section-title">สระเสียงยาวคืออะไร?</h2>
+            <div class="rule-content">
+                <p>สระเสียงยาว (Long Vowel) คือเสียงสระที่ออกเสียงยาวและเหมือนชื่อของตัวอักษรนั้นๆ ในภาษาอังกฤษ มี 5 เสียงหลัก:</p>
+                <ul style="list-style-type: none; margin: 20px 0; padding-left: 20px;">
+                    <li style="margin-bottom: 15px;">✅ <strong>Long A</strong> - ออกเสียง "เอ" ยาว (เช่น cake, name)</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Long E</strong> - ออกเสียง "อี" ยาว (เช่น bee, see)</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Long I</strong> - ออกเสียง "ไอ" ยาว (เช่น bike, time)</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Long O</strong> - ออกเสียง "โอ" ยาว (เช่น home, rope)</li>
+                    <li style="margin-bottom: 15px;">✅ <strong>Long U</strong> - ออกเสียง "ยู" หรือ "อู" ยาว (เช่น cute, flute)</li>
+                </ul>
+                <p>สระเสียงยาวมักเกิดขึ้นเมื่อมีรูปแบบต่อไปนี้ในคำ:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+                    <div class="rule-section">
+                        <div class="rule-title">1. Vowel-Consonant-e</div>
+                        <p>เมื่อตัวสระ + พยัญชนะ + ตัว e อยู่ท้ายคำ ตัว e จะไม่ออกเสียง แต่ทำให้สระหน้าออกเสียงยาว</p>
+                        <p>เช่น: <span class="rule-example">cake</span>, <span class="rule-example">bike</span>, <span class="rule-example">home</span></p>
+                    </div>
+                    <div class="rule-section">
+                        <div class="rule-title">2. Vowel Teams</div>
+                        <p>เมื่อสระสองตัวอยู่ติดกัน มักจะออกเสียงสระตัวแรกยาว</p>
+                        <p>เช่น: <span class="rule-example">boat</span> (oa), <span class="rule-example">bee</span> (ee), <span class="rule-example">rain</span> (ai)</p>
+                    </div>
+                    <div class="rule-section">
+                        <div class="rule-title">3. Open Syllables</div>
+                        <p>เมื่อพยางค์เปิดด้วยสระและลงท้ายด้วยสระ มักจะออกเสียงยาว</p>
+                        <p>เช่น: <span class="rule-example">me</span>, <span class="rule-example">go</span>, <span class="rule-example">hi</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Section -->
+        <div class="interactive-section">
+            <h2 class="section-title">แบบฝึกหัดฝึกฝนสระเสียงยาว</h2>
+            
+            <div class="game-container">
+                <div class="game-box">
+                    <h3 class="game-title">เกมฟังเสียงเลือกสระ</h3>
+                    <p>ฟังเสียงแล้วเลือกสระเสียงยาวที่คุณได้ยิน!</p>
+                    
+                    <div class="sound-buttons" style="justify-content: center; margin: 20px 0;">
+                        <button class="sound-button" id="play-game-sound">
+                            <i class="fas fa-volume-up"></i> ฟังเสียง
+                        </button>
+                    </div>
+                    
+                    <div class="options-container">
+                        <button class="vowel-option" data-vowel="a">A</button>
+                        <button class="vowel-option" data-vowel="e">E</button>
+                        <button class="vowel-option" data-vowel="i">I</button>
+                        <button class="vowel-option" data-vowel="o">O</button>
+                        <button class="vowel-option" data-vowel="u">U</button>
+                    </div>
+                    
+                    <button class="game-button" id="check-answer">ตรวจคำตอบ</button>
+                    <div class="result-message" id="sound-result"></div>
+                </div>
+                
+                <div class="game-box">
+                    <h3 class="game-title">เกมจับคู่สระเสียงยาว</h3>
+                    <p>ลากคำศัพท์ไปวางในกลุ่มสระที่ถูกต้อง!</p>
+                    
+                    <div class="drag-game-container">
+                        <div class="vowel-group" data-vowel="a">
+                            <div class="group-title">Long A</div>
+                            <div class="group-content"></div>
+                        </div>
+                        <div class="vowel-group" data-vowel="e">
+                            <div class="group-title">Long E</div>
+                            <div class="group-content"></div>
+                        </div>
+                        <div class="vowel-group" data-vowel="i">
+                            <div class="group-title">Long I</div>
+                            <div class="group-content"></div>
+                        </div>
+                        <div class="vowel-group" data-vowel="o">
+                            <div class="group-title">Long O</div>
+                            <div class="group-content"></div>
+                        </div>
+                        <div class="vowel-group" data-vowel="u">
+                            <div class="group-title">Long U</div>
+                            <div class="group-content"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="word-options-container" id="word-options">
+                        <div class="word-option" data-word="cake" data-vowel="a" draggable="true">cake</div>
+                        <div class="word-option" data-word="bee" data-vowel="e" draggable="true">bee</div>
+                        <div class="word-option" data-word="bike" data-vowel="i" draggable="true">bike</div>
+                        <div class="word-option" data-word="boat" data-vowel="o" draggable="true">boat</div>
+                        <div class="word-option" data-word="flute" data-vowel="u" draggable="true">flute</div>
+                        <div class="word-option" data-word="rain" data-vowel="a" draggable="true">rain</div>
+                        <div class="word-option" data-word="tree" data-vowel="e" draggable="true">tree</div>
+                        <div class="word-option" data-word="kite" data-vowel="i" draggable="true">kite</div>
+                        <div class="word-option" data-word="phone" data-vowel="o" draggable="true">phone</div>
+                        <div class="word-option" data-word="cube" data-vowel="u" draggable="true">cube</div>
+                    </div>
+                    
+                    <button class="game-button" id="check-drag-game">ตรวจคำตอบ</button>
+                    <button class="game-button" id="reset-drag-game" style="background: #ff6b6b;">เริ่มเกมใหม่</button>
+                    <div class="result-message" id="drag-result"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>เว็บไซต์การเรียนรู้โฟนิกส์สำหรับนักเรียนประถมศึกษา</p>
+            <p class="creator">สร้างโดย KruBank Jirayu Kerdmanee</p>
+        </div>
+    </div>
+
+    <script>
+        // ข้อมูลสำหรับเกม
+        const longVowelSounds = {
+            a: ["cake", "plane", "rain", "snail", "lake"],
+            e: ["bee", "tree", "leaf", "cheese", "sea"],
+            i: ["time", "bike", "light", "kite", "eye"],
+            o: ["home", "boat", "phone", "snow", "rainbow"],
+            u: ["flute", "unicorn", "cube", "tube", "tune"]
+        };
+
+        // ฟังก์ชันสำหรับเล่นเสียง
+        function playSound(text, rate = 0.8, pitch = 1.0) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = rate;
+            utterance.pitch = pitch;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // ฟังก์ชันย้อนกลับ
+        function goBack() {
+            alert('กำลังกลับไปหน้า Dashboard...');
+            // ในเว็บจริง: window.location.href = 'dashboard.html';
+        }
+
+        // ตั้งค่า event listeners เมื่อโหลดหน้าเสร็จ
+        document.addEventListener('DOMContentLoaded', function() {
+            // เกมฟังเสียงเลือกสระ
+            let currentSound = null;
+            const soundResult = document.getElementById('sound-result');
+            
+            // สุ่มคำศัพท์สำหรับเกม
+            function getRandomLongVowelWord() {
+                const vowels = Object.keys(longVowelSounds);
+                const randomVowel = vowels[Math.floor(Math.random() * vowels.length)];
+                const words = longVowelSounds[randomVowel];
+                const randomWord = words[Math.floor(Math.random() * words.length)];
+                
+                return {
+                    vowel: randomVowel,
+                    word: randomWord
+                };
+            }
+            
+            // เล่นเสียงสำหรับเกม
+            document.getElementById('play-game-sound').addEventListener('click', function() {
+                currentSound = getRandomLongVowelWord();
+                playSound(currentSound.word, 0.7, 1.0);
+                soundResult.textContent = '';
+                
+                // รีเซ็ตการเลือก
+                document.querySelectorAll('.vowel-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+            });
+            
+            // เลือกสระ
+            document.querySelectorAll('.vowel-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // รีเซ็ตการเลือก
+                    document.querySelectorAll('.vowel-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // เลือกอันนี้
+                    this.classList.add('selected');
+                });
+            });
+            
+            // ตรวจคำตอบ
+            document.getElementById('check-answer').addEventListener('click', function() {
+                if (!currentSound) {
+                    soundResult.textContent = 'กรุณากดฟังเสียงก่อนตรวจสอบ!';
+                    soundResult.style.color = '#ff6b6b';
+                    return;
+                }
+                
+                const selectedOption = document.querySelector('.vowel-option.selected');
+                if (!selectedOption) {
+                    soundResult.textContent = 'กรุณาเลือกสระก่อนตรวจสอบ!';
+                    soundResult.style.color = '#ff6b6b';
+                    return;
+                }
+                
+                const selectedVowel = selectedOption.getAttribute('data-vowel');
+                if (selectedVowel === currentSound.vowel) {
+                    soundResult.textContent = 'ถูกต้อง! คุณเก่งมาก!';
+                    soundResult.style.color = '#4a69bd';
+                } else {
+                    soundResult.textContent = `ยังไม่ถูกต้อง! คำนี้มีสระเสียงยาว '${currentSound.vowel.toUpperCase()}'`;
+                    soundResult.style.color = '#ff6b6b';
+                }
+            });
+            
+            // เกมลากและวาง
+            const dragResult = document.getElementById('drag-result');
+            
+            // ตั้งค่า drag and drop
+            document.querySelectorAll('.word-option').forEach(option => {
+                option.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', this.getAttribute('data-word'));
+                });
+            });
+            
+            document.querySelectorAll('.vowel-group').forEach(group => {
+                group.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '#ffeb3b';
+                });
+                
+                group.addEventListener('dragleave', function(e) {
+                    this.style.backgroundColor = '';
+                });
+                
+                group.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.style.backgroundColor = '';
+                    const word = e.dataTransfer.getData('text/plain');
+                    const correctVowel = document.querySelector(`.word-option[data-word="${word}"]`).getAttribute('data-vowel');
+                    const groupVowel = this.getAttribute('data-vowel');
+                    
+                    if (correctVowel === groupVowel) {
+                        // เพิ่มคำลงในกลุ่ม
+                        const groupContent = this.querySelector('.group-content');
+                        const wordElement = document.createElement('div');
+                        wordElement.className = 'word-in-group';
+                        wordElement.textContent = word;
+                        groupContent.appendChild(wordElement);
+                        
+                        // ซ่อนคำจากตัวเลือก
+                        document.querySelector(`.word-option[data-word="${word}"]`).style.display = 'none';
+                        
+                        // ตรวจสอบว่าจบเกมหรือยัง
+                        if (document.querySelectorAll('.word-option:not([style*="display: none"])').length === 0) {
+                            dragResult.textContent = 'ยินดีด้วย! คุณทำได้ถูกต้องทั้งหมด!';
+                            dragResult.style.color = '#4a69bd';
+                        }
+                    } else {
+                        dragResult.textContent = 'ลองใหม่อีกครั้ง! คำนี้ไม่ตรงกับกลุ่มสระนี้';
+                        dragResult.style.color = '#ff6b6b';
+                        setTimeout(() => {
+                            dragResult.textContent = '';
+                        }, 2000);
+                    }
+                });
+            });
+            
+            // ฟังก์ชันรีเซ็ตเกม
+            function resetDragGame() {
+                // ลบคำจากกลุ่มทั้งหมด
+                document.querySelectorAll('.word-in-group').forEach(el => el.remove());
+                
+                // แสดงคำตัวเลือกทั้งหมด
+                document.querySelectorAll('.word-option').forEach(option => {
+                    option.style.display = 'inline-block';
+                });
+                
+                dragResult.textContent = '';
+            }
+            
+            // ปุ่มตรวจคำตอบ
+            document.getElementById('check-drag-game').addEventListener('click', function() {
+                // ตรวจสอบว่าคำทั้งหมดถูกวางถูกต้องหรือไม่
+                const allWordsPlaced = document.querySelectorAll('.word-option:not([style*="display: none"])').length === 0;
+                
+                if (allWordsPlaced) {
+                    // ตรวจสอบว่าคำถูกวางในกลุ่มที่ถูกต้องทั้งหมด
+                    let allCorrect = true;
+                    
+                    document.querySelectorAll('.vowel-group').forEach(group => {
+                        const groupVowel = group.getAttribute('data-vowel');
+                        const wordsInGroup = group.querySelectorAll('.word-in-group');
+                        
+                        wordsInGroup.forEach(wordEl => {
+                            const word = wordEl.textContent;
+                            const correctVowel = document.querySelector(`.word-option[data-word="${word}"]`).getAttribute('data-vowel');
+                            
+                            if (correctVowel !== groupVowel) {
+                                allCorrect = false;
+                            }
+                        });
+                    });
+                    
+                    if (allCorrect) {
+                        dragResult.textContent = 'ยินดีด้วย! คุณทำได้ถูกต้องทั้งหมด!';
+                        dragResult.style.color = '#4a69bd';
+                    } else {
+                        dragResult.textContent = 'มีบางคำที่อยู่ในกลุ่มที่ไม่ถูกต้อง!';
+                        dragResult.style.color = '#ff6b6b';
+                    }
+                } else {
+                    dragResult.textContent = 'กรุณาจับคู่คำศัพท์ให้ครบทุกคำ!';
+                    dragResult.style.color = '#ff6b6b';
+                }
+            });
+            
+            // ปุ่มรีเซ็ตเกม
+            document.getElementById('reset-drag-game').addEventListener('click', resetDragGame);
+        });
+    </script>
+</body>
+</html>

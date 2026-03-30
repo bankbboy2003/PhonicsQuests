@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blend Consonant - ABC Phonics Sound Proud & Learn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #f8bbd0);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            margin: 20px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 4px solid #ffccbc;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            background: #ff9aa2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+            background: #ff6b6b;
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            color: #ff6b6b;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: #4a69bd;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 1.4rem;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto 25px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Color scheme from Dashboard buttons */
+        .color-scheme-1 { background: #ff9aa2; }
+        .color-scheme-2 { background: #ffb7b2; }
+        .color-scheme-3 { background: #ffdac1; }
+        .color-scheme-4 { background: #e2f0cb; }
+        .color-scheme-5 { background: #b5ead7; }
+        .color-scheme-6 { background: #c7ceea; }
+        .color-scheme-7 { background: #f8c8dc; }
+        .color-scheme-8 { background: #a0e7e5; }
+        .color-scheme-9 { background: #dfccfb; }
+
+        .intro-section {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 25px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 3px solid #a5d6a7;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff9aa2, #4a69bd);
+            border-radius: 2px;
+        }
+
+        .intro-content {
+            font-size: 1.4rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(255,154,162,0.3), rgba(74,105,189,0.3));
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .blend-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-top: 10px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: currentColor;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .category-icon {
+            font-size: 4.5rem;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-title {
+            font-size: 2.8rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .category-description {
+            font-size: 1.5rem;
+            color: #4a69bd;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .blend-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .blend-card {
+            background: rgba(245, 245, 245, 0.8);
+            border-radius: 20px;
+            padding: 20px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .blend-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .blend-icon {
+            font-size: 3.5rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blend-title {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .blend-examples {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .example-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            margin: 8px 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .example-item:hover {
+            background: rgba(255, 154, 162, 0.15);
+            transform: translateX(5px);
+        }
+
+        .example-word {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #333;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .word-sound {
+            background: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .word-sound:hover {
+            transform: scale(1.1);
+            background: #1e3799;
+        }
+
+        .sound-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sound-button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .sound-button:hover {
+            background: #c2185b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .real-life-section {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 25px;
+            padding: 35px;
+            margin: 40px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 3px solid #c7ceea;
+        }
+
+        .real-life-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .situation-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid #dfccfb;
+            transition: all 0.3s ease;
+        }
+
+        .situation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .situation-title {
+            font-size: 2rem;
+            color: #e91e63;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .situation-examples {
+            font-size: 1.4rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .situation-examples li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .situation-examples li::before {
+            content: '•';
+            position: absolute;
+            left: 10px;
+            color: #ff6b6b;
+            font-size: 1.6rem;
+        }
+
+        .interactive-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 35px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid #c7ceea;
+        }
+
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 35px;
+            margin-top: 30px;
+        }
+
+        .game-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid #dfccfb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #ff9aa2, #4a69bd);
+        }
+
+        .game-title {
+            font-size: 2.2rem;
+            color: #e91e63;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .game-content {
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .puzzle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .puzzle-letter {
+            font-size: 2.5rem;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffdac1;
+            border-radius: 15px;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .puzzle-blank {
+            font-size: 2.5rem;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 4px dashed #ff9aa2;
+            border-radius: 15px;
+            font-weight: 700;
+        }
+
+        .puzzle-image {
+            width: 130px;
+            height: 130px;
+            background: #c7ceea;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .blend-option {
+            background: #b5ead7;
+            border: none;
+            border-radius: 15px;
+            width: 80px;
+            height: 80px;
+            font-size: 2.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .blend-option:hover {
+            transform: scale(1.1);
+            background: #a0e7e5;
+        }
+
+        .blend-option.selected {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .game-button {
+            background: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 35px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-button:hover {
+            background: #1e3799;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-message {
+            font-size: 1.6rem;
+            margin-top: 25px;
+            min-height: 60px;
+            font-weight: 600;
+            color: #4a69bd;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 3px solid #a5d6a7;
+        }
+
+        .creator {
+            font-size: 1.5rem;
+            color: #e91e63;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 992px) {
+            h1 { font-size: 3.2rem; }
+            .subtitle { font-size: 1.8rem; }
+            .category-title { font-size: 2.4rem; }
+            .game-container { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .section-title { font-size: 2.2rem; }
+            .description, .intro-content { font-size: 1.3rem; }
+            .category-card { padding: 25px 15px; }
+            .category-icon { width: 100px; height: 100px; font-size: 3.8rem; }
+            .blend-container { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+        }
+
+        @media (max-width: 576px) {
+            .header { padding: 20px 15px; }
+            h1 { font-size: 2.4rem; }
+            .subtitle { font-size: 1.6rem; }
+            .section-title { font-size: 2rem; }
+            .back-button { width: 45px; height: 45px; font-size: 1.4rem; left: 15px; top: 15px; }
+            .blend-categories { grid-template-columns: 1fr; }
+            .game-box { padding: 25px 15px; }
+            .puzzle-letter, .puzzle-blank { width: 50px; height: 50px; font-size: 2rem; }
+            .blend-option { width: 65px; height: 65px; font-size: 1.8rem; }
+            .real-life-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>ABC Phonics Sound Proud & Learn</h1>
+            <div class="subtitle">เรียนรู้พยัญชนะผสม (Blend Consonant)</div>
+            <p class="description">พยัญชนะผสมคือพยัญชนะสองตัวที่อยู่ติดกันและออกเสียงทั้งสองเสียงผสมกัน มาฝึกออกเสียงและนำไปใช้ในชีวิตประจำวันกัน!</p>
+        </div>
+        
+        <!-- Introduction to Blend Consonants -->
+        <div class="intro-section">
+            <h2 class="section-title">พยัญชนะผสม (Blend Consonant) คืออะไร?</h2>
+            <div class="intro-content">
+                <p>พยัญชนะผสม (Blend Consonant) คือการที่พยัญชนะสองตัวอยู่ติดกันและออกเสียงทั้งสองเสียงผสมกัน โดยยังคงได้ยินเสียงของพยัญชนะทั้งสองตัวชัดเจน การเรียนรู้พยัญชนะผสมช่วยให้นักเรียนอ่านคำศัพท์ภาษาอังกฤษได้คล่องแคล่วมากขึ้น</p>
+                
+                <p>กฎสำคัญของพยัญชนะผสม:</p>
+                <ul style="list-style-type: none; margin: 25px 0; padding-left: 0;">
+                    <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; left: 0; top: 5px; color: #ff6b6b;"></i>
+                        <strong>"เมื่อพยัญชนะผสมเดินเคียงคู่ ทั้งสองเสียงยังคงอยู่"</strong> - ออกเสียงพยัญชนะทั้งสองตัวผสมกัน
+                    </li>
+                    <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; left: 0; top: 5px; color: #ff6b6b;"></i>
+                        <strong>แตกต่างจาก Digraph:</strong> พยัญชนะผสมออกเสียงทั้งสองตัว ส่วน Digraph ออกเสียงใหม่เพียงเสียงเดียว
+                    </li>
+                    <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; left: 0; top: 5px; color: #ff6b6b;"></i>
+                        <strong>พบได้บ่อย:</strong> พยัญชนะผสมมักอยู่ต้นคำหรือท้ายคำ และเป็นพื้นฐานการอ่านคำศัพท์ภาษาอังกฤษ
+                    </li>
+                </ul>
+                
+                <p>การเรียนรู้พยัญชนะผสมช่วยให้นักเรียนอ่านคำศัพท์ภาษาอังกฤษได้ถูกต้องมากขึ้น และเป็นทักษะสำคัญสำหรับการพัฒนาทักษะการอ่านและการสื่อสารในชีวิตประจำวัน!</p>
+            </div>
+        </div>
+        
+        <!-- Blend Consonant Categories -->
+        <div class="blend-categories">
+            <!-- L Blends -->
+            <div class="category-card" style="border-top-color: #ff9aa2;">
+                <div class="category-header">
+                    <div class="category-icon color-scheme-1">L</div>
+                    <h3 class="category-title">L Blends</h3>
+                    <p class="category-description">พยัญชนะผสมกับ L</p>
+                </div>
+                
+                <div class="blend-container">
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-1">bl</div>
+                        <h4 class="blend-title">BL</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">blue</div>
+                                <button class="word-sound" data-word="blue">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">black</div>
+                                <button class="word-sound" data-word="black">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">block</div>
+                                <button class="word-sound" data-word="block">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-2">cl</div>
+                        <h4 class="blend-title">CL</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">clock</div>
+                                <button class="word-sound" data-word="clock">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">cloud</div>
+                                <button class="word-sound" data-word="cloud">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">clap</div>
+                                <button class="word-sound" data-word="clap">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-3">fl</div>
+                        <h4 class="blend-title">FL</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">flower</div>
+                                <button class="word-sound" data-word="flower">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">flag</div>
+                                <button class="word-sound" data-word="flag">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">fly</div>
+                                <button class="word-sound" data-word="fly">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- R Blends -->
+            <div class="category-card" style="border-top-color: #ffb7b2;">
+                <div class="category-header">
+                    <div class="category-icon color-scheme-4">R</div>
+                    <h3 class="category-title">R Blends</h3>
+                    <p class="category-description">พยัญชนะผสมกับ R</p>
+                </div>
+                
+                <div class="blend-container">
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-4">br</div>
+                        <h4 class="blend-title">BR</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">bread</div>
+                                <button class="word-sound" data-word="bread">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">brown</div>
+                                <button class="word-sound" data-word="brown">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">bridge</div>
+                                <button class="word-sound" data-word="bridge">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-5">cr</div>
+                        <h4 class="blend-title">CR</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">crab</div>
+                                <button class="word-sound" data-word="crab">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">cry</div>
+                                <button class="word-sound" data-word="cry">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">crown</div>
+                                <button class="word-sound" data-word="crown">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-6">fr</div>
+                        <h4 class="blend-title">FR</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">frog</div>
+                                <button class="word-sound" data-word="frog">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">fruit</div>
+                                <button class="word-sound" data-word="fruit">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">friend</div>
+                                <button class="word-sound" data-word="friend">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- S Blends -->
+            <div class="category-card" style="border-top-color: #ffdac1;">
+                <div class="category-header">
+                    <div class="category-icon color-scheme-7">S</div>
+                    <h3 class="category-title">S Blends</h3>
+                    <p class="category-description">พยัญชนะผสมกับ S</p>
+                </div>
+                
+                <div class="blend-container">
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-7">sk</div>
+                        <h4 class="blend-title">SK</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">sky</div>
+                                <button class="word-sound" data-word="sky">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">skate</div>
+                                <button class="word-sound" data-word="skate">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">skin</div>
+                                <button class="word-sound" data-word="skin">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-8">sl</div>
+                        <h4 class="blend-title">SL</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">sleep</div>
+                                <button class="word-sound" data-word="sleep">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">slide</div>
+                                <button class="word-sound" data-word="slide">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">slow</div>
+                                <button class="word-sound" data-word="slow">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blend-card">
+                        <div class="blend-icon color-scheme-9">st</div>
+                        <h4 class="blend-title">ST</h4>
+                        <div class="blend-examples">
+                            <div class="example-item">
+                                <div class="example-word">star</div>
+                                <button class="word-sound" data-word="star">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">stop</div>
+                                <button class="word-sound" data-word="stop">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            <div class="example-item">
+                                <div class="example-word">stone</div>
+                                <button class="word-sound" data-word="stone">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Real Life Application Section -->
+        <div class="real-life-section">
+            <h2 class="section-title">การนำพยัญชนะผสมไปใช้ในชีวิตประจำวัน</h2>
+            
+            <div class="real-life-content">
+                <div class="situation-card">
+                    <h3 class="situation-title">🏫 ที่โรงเรียน</h3>
+                    <ul class="situation-examples">
+                        <li>"Please <span class="highlight">cl</span>ose the door." - กรุณาปิดประตู</li>
+                        <li>"Let's <span class="highlight">pl</span>ay in the <span class="highlight">gr</span>ass." - ไปเล่นบนหญ้ากัน</li>
+                        <li>"I need a <span class="highlight">gl</span>ue stick." - ฉันต้องการกาวแท่ง</li>
+                        <li>"The <span class="highlight">br</span>own <span class="highlight">fr</span>og jumps." - กบสีน้ำตาลกระโดด</li>
+                    </ul>
+                </div>
+                
+                <div class="situation-card">
+                    <h3 class="situation-title">🏠 ที่บ้าน</h3>
+                    <ul class="situation-examples">
+                        <li>"Mom is making <span class="highlight">br</span>ead." - แม่กำลังทำขนมปัง</li>
+                        <li>"I <span class="highlight">sl</span>eep in my bed." - ฉันนอนบนเตียง</li>
+                        <li>"The <span class="highlight">fl</span>ower is <span class="highlight">pr</span>etty." - ดอกไม้สวยมาก</li>
+                        <li>"Please <span class="highlight">st</span>op the music." - กรุณาหยุดเพลง</li>
+                    </ul>
+                </div>
+                
+                <div class="situation-card">
+                    <h3 class="situation-title">🛒 ที่ห้างสรรพสินค้า</h3>
+                    <ul class="situation-examples">
+                        <li>"I want <span class="highlight">fr</span>uit juice." - ฉันต้องการน้ำผลไม้</li>
+                        <li>"The <span class="highlight">cl</span>ock is expensive." - นาฬิกาเรือนนี้แพง</li>
+                        <li>"Let's buy <span class="highlight">bl</span>ue shoes." - ไปซื้อรองเท้าสีฟ้ากัน</li>
+                        <li>"This <span class="highlight">dr</span>ess is beautiful." - ชุดนี้สวยมาก</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Section -->
+        <div class="interactive-section">
+            <h2 class="section-title">แบบฝึกหัดฝึกฝนพยัญชนะผสม</h2>
+            
+            <div class="game-container">
+                <div class="game-box">
+                    <h3 class="game-title">เกมเติมพยัญชนะผสมในคำ</h3>
+                    <p>เติมพยัญชนะผสมที่หายไปให้ถูกต้อง!</p>
+                    
+                    <div class="game-content">
+                        <div class="puzzle-image" id="puzzle-image">🐸</div>
+                        <div class="puzzle-container">
+                            <div class="puzzle-blank" id="consonant-blank">?</div>
+                            <div class="puzzle-letter">o</div>
+                            <div class="puzzle-letter">g</div>
+                        </div>
+                    </div>
+                    
+                    <div class="options-container">
+                        <button class="blend-option" data-blend="bl">bl</button>
+                        <button class="blend-option" data-blend="cl">cl</button>
+                        <button class="blend-option" data-blend="fl">fl</button>
+                        <button class="blend-option" data-blend="fr">fr</button>
+                        <button class="blend-option" data-blend="gr">gr</button>
+                        <button class="blend-option" data-blend="pr">pr</button>
+                    </div>
+                    
+                    <button class="game-button" id="check-puzzle">ตรวจคำตอบ</button>
+                    <button class="game-button" id="next-puzzle" style="background: #ff6b6b;">คำถัดไป</button>
+                    <div class="result-message" id="puzzle-result"></div>
+                </div>
+                
+                <div class="game-box">
+                    <h3 class="game-title">เกมสร้างคำจากพยัญชนะผสม</h3>
+                    <p>สร้างคำศัพท์จากพยัญชนะผสมที่กำหนด!</p>
+                    
+                    <div class="game-content">
+                        <div class="target-blend" id="target-blend" style="font-size: 3rem; color: #ff6b6b; margin: 20px 0; font-weight: bold;">bl</div>
+                        <input type="text" class="word-input" id="word-input" placeholder="พิมพ์คำศัพท์ที่นี่..." style="padding: 12px 20px; font-size: 1.4rem; border: 3px solid #ff9aa2; border-radius: 50px; width: 100%; max-width: 300px; margin: 10px 0; text-align: center; outline: none;">
+                        <p style="font-size: 1.3rem; color: #555; margin: 15px 0;">สร้างคำที่ขึ้นต้นด้วย <span id="current-blend" style="font-weight: bold; color: #4a69bd;">bl</span></p>
+                    </div>
+                    
+                    <button class="game-button" id="check-word">ตรวจคำตอบ</button>
+                    <button class="game-button" id="new-blend" style="background: #ff6b6b;">พยัญชนะผสมใหม่</button>
+                    <div class="result-message" id="word-result"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>เว็บไซต์การเรียนรู้โฟนิกส์สำหรับนักเรียนประถมศึกษา</p>
+            <p class="creator">สร้างโดย KruBank Jirayu Kerdmanee</p>
+        </div>
+    </div>
+
+    <script>
+        // ข้อมูลสำหรับเกม
+        const blendConsonantWords = [
+            { word: "frog", blend: "fr", image: "🐸" },
+            { word: "block", blend: "bl", image: "🧱" },
+            { word: "clock", blend: "cl", image: "⏰" },
+            { word: "flag", blend: "fl", image: "🚩" },
+            { word: "grape", blend: "gr", image: "🍇" },
+            { word: "prize", blend: "pr", image: "🏆" },
+            { word: "bread", blend: "br", image: "🍞" },
+            { word: "crab", blend: "cr", image: "🦀" },
+            { word: "drum", blend: "dr", image: "🥁" },
+            { word: "sky", blend: "sk", image: "🌌" },
+            { word: "slide", blend: "sl", image: "🛝" },
+            { word: "smile", blend: "sm", image: "😊" },
+            { word: "snake", blend: "sn", image: "🐍" },
+            { word: "spoon", blend: "sp", image: "🥄" },
+            { word: "star", blend: "st", image: "⭐" },
+            { word: "swim", blend: "sw", image: "🏊" }
+        ];
+
+        const blendConsonants = ["bl", "cl", "fl", "gl", "pl", "br", "cr", "dr", "fr", "gr", "pr", "tr", "sc", "sk", "sl", "sm", "sn", "sp", "st", "sw"];
+
+        // ฟังก์ชันสำหรับเล่นเสียง
+        function playSound(text, rate = 0.8, pitch = 1.0) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = rate;
+            utterance.pitch = pitch;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // ฟังก์ชันย้อนกลับ
+        function goBack() {
+            alert('กำลังกลับไปหน้า Dashboard...');
+            // ในเว็บจริง: window.location.href = 'dashboard.html';
+        }
+
+        // ตั้งค่า event listeners เมื่อโหลดหน้าเสร็จ
+        document.addEventListener('DOMContentLoaded', function() {
+            // ตั้งค่า event สำหรับปุ่มเสียง
+            document.querySelectorAll('.word-sound').forEach(button => {
+                button.addEventListener('click', function() {
+                    const word = this.getAttribute('data-word');
+                    playSound(word, 0.7, 1.0);
+                    
+                    // เอฟเฟ็กต์ปุ่ม
+                    this.style.backgroundColor = '#ff6b6b';
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                    }, 500);
+                });
+            });
+            
+            // เกมเติมพยัญชนะผสม
+            let currentPuzzle = null;
+            const puzzleImage = document.getElementById('puzzle-image');
+            const consonantBlank = document.getElementById('consonant-blank');
+            const puzzleResult = document.getElementById('puzzle-result');
+            let selectedBlend = null;
+            
+            // สุ่มปริศนา
+            function generatePuzzle() {
+                const randomIndex = Math.floor(Math.random() * blendConsonantWords.length);
+                currentPuzzle = blendConsonantWords[randomIndex];
+                
+                // แสดงภาพ
+                puzzleImage.textContent = currentPuzzle.image;
+                
+                // รีเซ็ตการเลือก
+                puzzleResult.textContent = '';
+                selectedBlend = null;
+                document.querySelectorAll('.blend-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+            }
+            
+            // เลือกพยัญชนะผสม
+            document.querySelectorAll('.blend-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // รีเซ็ตการเลือก
+                    document.querySelectorAll('.blend-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // เลือกอันนี้
+                    this.classList.add('selected');
+                    selectedBlend = this.getAttribute('data-blend');
+                    consonantBlank.textContent = selectedBlend;
+                });
+            });
+            
+            // ตรวจสอบคำตอบ
+            document.getElementById('check-puzzle').addEventListener('click', function() {
+                if (!selectedBlend) {
+                    puzzleResult.textContent = 'กรุณาเลือกพยัญชนะผสมก่อนตรวจสอบ!';
+                    puzzleResult.style.color = '#ff6b6b';
+                    return;
+                }
+                
+                if (selectedBlend === currentPuzzle.blend) {
+                    puzzleResult.textContent = 'ถูกต้อง! เยี่ยมมาก!';
+                    puzzleResult.style.color = '#4a69bd';
+                    playSound(currentPuzzle.word, 0.7, 1.0);
+                } else {
+                    puzzleResult.textContent = 'ยังไม่ถูกต้อง! ลองใหม่อีกครั้ง';
+                    puzzleResult.style.color = '#ff6b6b';
+                }
+            });
+            
+            // คำถัดไป
+            document.getElementById('next-puzzle').addEventListener('click', generatePuzzle);
+            
+            // เริ่มเกมแรก
+            generatePuzzle();
+            
+            // เกมสร้างคำจากพยัญชนะผสม
+            const targetBlend = document.getElementById('target-blend');
+            const currentBlend = document.getElementById('current-blend');
+            const wordInput = document.getElementById('word-input');
+            const wordResult = document.getElementById('word-result');
+            let currentBlendType = "bl";
+            
+            // สุ่มพยัญชนะผสมใหม่
+            function generateNewBlend() {
+                const randomIndex = Math.floor(Math.random() * blendConsonants.length);
+                currentBlendType = blendConsonants[randomIndex];
+                targetBlend.textContent = currentBlendType;
+                currentBlend.textContent = currentBlendType;
+                wordInput.value = '';
+                wordResult.textContent = '';
+            }
+            
+            // ตรวจสอบคำที่ผู้ใช้ป้อน
+            document.getElementById('check-word').addEventListener('click', function() {
+                const word = wordInput.value.trim().toLowerCase();
+                
+                if (!word) {
+                    wordResult.textContent = 'กรุณาพิมพ์คำศัพท์ก่อนตรวจสอบ!';
+                    wordResult.style.color = '#ff6b6b';
+                    return;
+                }
+                
+                if (word.startsWith(currentBlendType)) {
+                    // ตรวจสอบว่าคำนี้มีอยู่จริงหรือไม่
+                    const isValidWord = blendConsonantWords.some(item => item.word === word) || 
+                                      word.length >= 3; // อนุญาตให้ใช้คำอื่นๆ ที่ขึ้นต้นด้วย blend นั้นๆ
+                    
+                    if (isValidWord) {
+                        wordResult.textContent = 'ถูกต้อง! คุณเก่งมาก!';
+                        wordResult.style.color = '#4a69bd';
+                        playSound(word, 0.7, 1.0);
+                    } else {
+                        wordResult.textContent = 'เป็นคำที่ดี! แต่ลองหาคำอื่นดูนะ';
+                        wordResult.style.color = '#4a69bd';
+                    }
+                } else {
+                    wordResult.textContent = 'คำนี้ไม่ขึ้นต้นด้วย ' + currentBlendType + '! ลองใหม่อีกครั้ง';
+                    wordResult.style.color = '#ff6b6b';
+                }
+            });
+            
+            // ปุ่มสุ่มพยัญชนะผสมใหม่
+            document.getElementById('new-blend').addEventListener('click', generateNewBlend);
+            
+            // เริ่มเกมแรก
+            generateNewBlend();
+        });
+    </script>
+</body>
+</html>

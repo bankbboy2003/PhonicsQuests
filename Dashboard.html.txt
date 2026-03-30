@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Phonics Sound Proud & Learn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f8bbd0);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ffccbc;
+        }
+
+        h1 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #4a69bd;
+            margin-bottom: 20px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 25px 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .topic-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+        }
+
+        .topic-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .topic-desc {
+            font-size: 1.1rem;
+            color: #555;
+            padding: 0 10px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #a5d6a7;
+        }
+
+        .creator {
+            font-size: 1.4rem;
+            color: #e91e63;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* Individual topic colors */
+        .topic-card:nth-child(1) { border-color: #ff9aa2; }
+        .topic-card:nth-child(1) .topic-icon { background: #ff9aa2; }
+        
+        .topic-card:nth-child(2) { border-color: #ffb7b2; }
+        .topic-card:nth-child(2) .topic-icon { background: #ffb7b2; }
+        
+        .topic-card:nth-child(3) { border-color: #ffdac1; }
+        .topic-card:nth-child(3) .topic-icon { background: #ffdac1; }
+        
+        .topic-card:nth-child(4) { border-color: #e2f0cb; }
+        .topic-card:nth-child(4) .topic-icon { background: #e2f0cb; }
+        
+        .topic-card:nth-child(5) { border-color: #b5ead7; }
+        .topic-card:nth-child(5) .topic-icon { background: #b5ead7; }
+        
+        .topic-card:nth-child(6) { border-color: #c7ceea; }
+        .topic-card:nth-child(6) .topic-icon { background: #c7ceea; }
+        
+        .topic-card:nth-child(7) { border-color: #f8c8dc; }
+        .topic-card:nth-child(7) .topic-icon { background: #f8c8dc; }
+        
+        .topic-card:nth-child(8) { border-color: #a0e7e5; }
+        .topic-card:nth-child(8) .topic-icon { background: #a0e7e5; }
+        
+        .topic-card:nth-child(9) { border-color: #dfccfb; }
+        .topic-card:nth-child(9) .topic-icon { background: #dfccfb; }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.4rem; }
+            .dashboard { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .subtitle { font-size: 1.2rem; }
+            .topic-title { font-size: 1.5rem; }
+            .topic-icon { font-size: 3rem; width: 80px; height: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ABC Phonics Sound Proud & Learn</h1>
+            <div class="subtitle">เรียนภาษาอังกฤษอย่างสนุกสนานด้วยระบบโฟนิกส์!</div>
+        </div>
+        
+        <div class="dashboard">
+            <!-- The Alphabet -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-font"></i>
+                </div>
+                <h2 class="topic-title">The Alphabet</h2>
+                <p class="topic-desc">เรียนรู้ตัวอักษรภาษาอังกฤษ A-Z พร้อมเสียงพื้นฐาน</p>
+            </div>
+            
+            <!-- Short Vowel -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-volume-down"></i>
+                </div>
+                <h2 class="topic-title">Short Vowel</h2>
+                <p class="topic-desc">เสียงสระสั้นในภาษาอังกฤษ เช่น a, e, i, o, u</p>
+            </div>
+            
+            <!-- Long Vowel -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <h2 class="topic-title">Long Vowel</h2>
+                <p class="topic-desc">เสียงสระยาวในภาษาอังกฤษ เช่น a-e, i-e, o-e</p>
+            </div>
+            
+            <!-- Double Vowel -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <h2 class="topic-title">Double Vowel</h2>
+                <p class="topic-desc">การออกเสียงเมื่อมีสระสองตัวอยู่ติดกัน</p>
+            </div>
+            
+            <!-- Double Consonant -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-spell-check"></i>
+                </div>
+                <h2 class="topic-title">Double Consonant</h2>
+                <p class="topic-desc">การออกเสียงเมื่อมีพยัญชนะสองตัวอยู่ติดกัน</p>
+            </div>
+            
+            <!-- Blend Consonant -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-object-group"></i>
+                </div>
+                <h2 class="topic-title">Blend Consonant</h2>
+                <p class="topic-desc">การผสมพยัญชนะ เช่น bl, cl, fl, gl, pl</p>
+            </div>
+            
+            <!-- Blend Vowel -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-object-ungroup"></i>
+                </div>
+                <h2 class="topic-title">Blend Vowel</h2>
+                <p class="topic-desc">การผสมสระ เช่น oi, oy, ou, ow</p>
+            </div>
+            
+            <!-- Triple Vowel -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2 class="topic-title">Triple Vowel</h2>
+                <p class="topic-desc">การออกเสียงคำที่มีสระสามตัว เช่น beauty, beautiful</p>
+            </div>
+            
+            <!-- Triple Consonant -->
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-asterisk"></i>
+                </div>
+                <h2 class="topic-title">Triple Consonant</h2>
+                <p class="topic-desc">การออกเสียงคำที่มีพยัญชนะสามตัว เช่น splash, street</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>เว็บไซต์การเรียนรู้โฟนิกส์สำหรับนักเรียนประถมศึกษา</p>
+            <p class="creator">สร้างโดย KruBank Jirayu Kerdmanee</p>
+        </div>
+    </div>
+
+    <script>
+        // เพิ่ม animation และการโต้ตอบ
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.topic-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // เพิ่มเอฟเฟ็กต์เมื่อคลิก
+                    this.style.transform = 'scale(0.95)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+                    
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        this.style.boxShadow = '';
+                    }, 300);
+                    
+                    // ในเว็บจริงจะเป็นการนำทางไปยังหน้าถัดไป
+                    alert('กำลังนำทางไปยังหัวข้อ: ' + this.querySelector('.topic-title').textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

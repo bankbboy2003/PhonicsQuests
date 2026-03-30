@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Consonant - ABC Phonics Sound Proud & Learn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #f8bbd0);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            margin: 20px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 4px solid #ffccbc;
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            background: #ff9aa2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+            background: #ff6b6b;
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            color: #ff6b6b;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: #4a69bd;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 1.4rem;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto 25px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Color scheme from Dashboard buttons */
+        .color-scheme-1 { background: #ff9aa2; }
+        .color-scheme-2 { background: #ffb7b2; }
+        .color-scheme-3 { background: #ffdac1; }
+        .color-scheme-4 { background: #e2f0cb; }
+        .color-scheme-5 { background: #b5ead7; }
+        .color-scheme-6 { background: #c7ceea; }
+        .color-scheme-7 { background: #f8c8dc; }
+        .color-scheme-8 { background: #a0e7e5; }
+        .color-scheme-9 { background: #dfccfb; }
+
+        .intro-section {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 25px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 3px solid #a5d6a7;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff9aa2, #4a69bd);
+            border-radius: 2px;
+        }
+
+        .intro-content {
+            font-size: 1.4rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(255,154,162,0.3), rgba(74,105,189,0.3));
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .double-consonant-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .consonant-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 10px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consonant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: currentColor;
+        }
+
+        .consonant-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .consonant-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .consonant-icon {
+            font-size: 4.5rem;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .consonant-title {
+            font-size: 2.8rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .consonant-description {
+            font-size: 1.5rem;
+            color: #4a69bd;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .consonant-examples {
+            width: 100%;
+            padding: 20px 0;
+            border-top: 2px dashed rgba(74, 105, 189, 0.3);
+            border-bottom: 2px dashed rgba(74, 105, 189, 0.3);
+            margin: 15px 0;
+        }
+
+        .example-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 12px;
+            background: rgba(245, 245, 245, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .example-item:hover {
+            background: rgba(255, 154, 162, 0.15);
+            transform: translateX(5px);
+        }
+
+        .example-word {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            flex-grow: 1;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .example-phonetic {
+            font-size: 1.4rem;
+            color: #e91e63;
+            font-weight: 500;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        .word-sound {
+            background: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .word-sound:hover {
+            transform: scale(1.1);
+            background: #1e3799;
+        }
+
+        .sound-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sound-button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .sound-button:hover {
+            background: #c2185b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .interactive-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 35px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid #c7ceea;
+        }
+
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 35px;
+            margin-top: 30px;
+        }
+
+        .game-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid #dfccfb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #ff9aa2, #4a69bd);
+        }
+
+        .game-title {
+            font-size: 2.2rem;
+            color: #e91e63;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .game-content {
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .puzzle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .puzzle-letter {
+            font-size: 2.5rem;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffdac1;
+            border-radius: 15px;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .puzzle-blank {
+            font-size: 2.5rem;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 4px dashed #ff9aa2;
+            border-radius: 15px;
+            font-weight: 700;
+        }
+
+        .puzzle-image {
+            width: 130px;
+            height: 130px;
+            background: #c7ceea;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .options-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .consonant-option {
+            background: #b5ead7;
+            border: none;
+            border-radius: 15px;
+            width: 80px;
+            height: 80px;
+            font-size: 2.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .consonant-option:hover {
+            transform: scale(1.1);
+            background: #a0e7e5;
+        }
+
+        .consonant-option.selected {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .game-button {
+            background: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 35px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-button:hover {
+            background: #1e3799;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-message {
+            font-size: 1.6rem;
+            margin-top: 25px;
+            min-height: 60px;
+            font-weight: 600;
+            color: #4a69bd;
+            text-align: center;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 3px solid #a5d6a7;
+        }
+
+        .creator {
+            font-size: 1.5rem;
+            color: #e91e63;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 992px) {
+            h1 { font-size: 3.2rem; }
+            .subtitle { font-size: 1.8rem; }
+            .consonant-title { font-size: 2.4rem; }
+            .game-container { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .section-title { font-size: 2.2rem; }
+            .description, .intro-content { font-size: 1.3rem; }
+            .consonant-card { padding: 25px 15px; }
+            .consonant-icon { width: 100px; height: 100px; font-size: 3.8rem; }
+        }
+
+        @media (max-width: 576px) {
+            .header { padding: 20px 15px; }
+            h1 { font-size: 2.4rem; }
+            .subtitle { font-size: 1.6rem; }
+            .section-title { font-size: 2rem; }
+            .back-button { width: 45px; height: 45px; font-size: 1.4rem; left: 15px; top: 15px; }
+            .double-consonant-container { grid-template-columns: 1fr; }
+            .game-box { padding: 25px 15px; }
+            .puzzle-letter, .puzzle-blank { width: 50px; height: 50px; font-size: 2rem; }
+            .consonant-option { width: 65px; height: 65px; font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="back-button" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>ABC Phonics Sound Proud & Learn</h1>
+            <div class="subtitle">เรียนรู้พยัญชนะคู่ (Double Consonant)</div>
+            <p class="description">พยัญชนะคู่คือพยัญชนะสองตัวที่อยู่ติดกันและออกเสียงเป็นเสียงเดียว มาทำความเข้าใจกฎการออกเสียงที่สำคัญนี้กัน!</p>
+        </div>
+        
+        <!-- Introduction to Double Consonants -->
+        <div class="intro-section">
+            <h2 class="section-title">พยัญชนะคู่ (Double Consonant) คืออะไร?</h2>
+            <div class="intro-content">
+                <p>พยัญชนะคู่ (Double Consonant) คือการที่พยัญชนะสองตัวเหมือนกันอยู่ติดกันในคำ เมื่อพบพยัญชนะคู่ เรามักจะออกเสียงพยัญชนะนั้นเพียงครั้งเดียว แต่มีผลทำให้สระที่อยู่หน้าพยัญชนะคู่ออกเสียงสั้น</p>
+                
+                <p>กฎสำคัญของพยัญชนะคู่:</p>
+                <ul style="list-style-type: none; margin: 25px 0; padding-left: 0;">
+                    <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; left: 0; top: 5px; color: #ff6b6b;"></i>
+                        <strong>"เมื่อพยัญชนะคู่เดินเคียงคู่ สระหน้าจะสั้นตัวหลังเป็นเงา"</strong> - สระหน้าพยัญชนะคู่ออกเสียงสั้น พยัญชนะคู่ออกเสียงเดียว
+                    </li>
+                    <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; left: 0; top: 5px; color: #ff6b6b;"></i>
+                        <strong>หน้าที่สำคัญ:</strong> พยัญชนะคู่ช่วยบ่งบอกว่าสระหน้าคำนั้นออกเสียงสั้น
+                    </li>
+                    <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                        <i class="fas fa-star" style="position: absolute; left: 0; top: 5px; color: #ff6b6b;"></i>
+                        <strong>ตำแหน่งสำคัญ:</strong> มักพบพยัญชนะคู่ในพยางค์ปิด (Closed Syllables) ที่ลงท้ายด้วยพยัญชนะ
+                    </li>
+                </ul>
+                
+                <p>การเรียนรู้พยัญชนะคู่ช่วยให้นักเรียนอ่านคำศัพท์ภาษาอังกฤษได้ถูกต้องมากขึ้น และเป็นพื้นฐานสำคัญสำหรับการพัฒนาทักษะการอ่าน!</p>
+            </div>
+        </div>
+        
+        <!-- Double Consonant Teams -->
+        <div class="double-consonant-container">
+            <!-- bb -->
+            <div class="consonant-card" style="border-top-color: #ff9aa2;">
+                <div class="consonant-header">
+                    <div class="consonant-icon color-scheme-1">bb</div>
+                    <h3 class="consonant-title">BB</h3>
+                    <p class="consonant-description">ออกเสียง "บ" เดี่ยว</p>
+                </div>
+                
+                <div class="consonant-examples">
+                    <div class="example-item">
+                        <div class="example-word">rabbit</div>
+                        <div class="example-phonetic">/ˈræb.ɪt/</div>
+                        <button class="word-sound" data-word="rabbit">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">bubble</div>
+                        <div class="example-phonetic">/ˈbʌb.əl/</div>
+                        <button class="word-sound" data-word="bubble">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">ribbon</div>
+                        <div class="example-phonetic">/ˈrɪb.ən/</div>
+                        <button class="word-sound" data-word="ribbon">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sound-buttons">
+                    <button class="sound-button">
+                        <i class="fas fa-wave-square"></i> ฟังเสียงพยัญชนะคู่
+                    </button>
+                </div>
+            </div>
+            
+            <!-- dd -->
+            <div class="consonant-card" style="border-top-color: #ffb7b2;">
+                <div class="consonant-header">
+                    <div class="consonant-icon color-scheme-2">dd</div>
+                    <h3 class="consonant-title">DD</h3>
+                    <p class="consonant-description">ออกเสียง "ด" เดี่ยว</p>
+                </div>
+                
+                <div class="consonant-examples">
+                    <div class="example-item">
+                        <div class="example-word">ladder</div>
+                        <div class="example-phonetic">/ˈlæd.ər/</div>
+                        <button class="word-sound" data-word="ladder">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">paddle</div>
+                        <div class="example-phonetic">/ˈpæd.əl/</div>
+                        <button class="word-sound" data-word="paddle">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">middle</div>
+                        <div class="example-phonetic">/ˈmɪd.əl/</div>
+                        <button class="word-sound" data-word="middle">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sound-buttons">
+                    <button class="sound-button">
+                        <i class="fas fa-wave-square"></i> ฟังเสียงพยัญชนะคู่
+                    </button>
+                </div>
+            </div>
+            
+            <!-- ff -->
+            <div class="consonant-card" style="border-top-color: #ffdac1;">
+                <div class="consonant-header">
+                    <div class="consonant-icon color-scheme-3">ff</div>
+                    <h3 class="consonant-title">FF</h3>
+                    <p class="consonant-description">ออกเสียง "ฟ" เดี่ยว</p>
+                </div>
+                
+                <div class="consonant-examples">
+                    <div class="example-item">
+                        <div class="example-word">coffee</div>
+                        <div class="example-phonetic">/ˈkɒf.i/</div>
+                        <button class="word-sound" data-word="coffee">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">office</div>
+                        <div class="example-phonetic">/ˈɒf.ɪs/</div>
+                        <button class="word-sound" data-word="office">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">stuff</div>
+                        <div class="example-phonetic">/stʌf/</div>
+                        <button class="word-sound" data-word="stuff">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sound-buttons">
+                    <button class="sound-button">
+                        <i class="fas fa-wave-square"></i> ฟังเสียงพยัญชนะคู่
+                    </button>
+                </div>
+            </div>
+            
+            <!-- ll -->
+            <div class="consonant-card" style="border-top-color: #e2f0cb;">
+                <div class="consonant-header">
+                    <div class="consonant-icon color-scheme-4">ll</div>
+                    <h3 class="consonant-title">LL</h3>
+                    <p class="consonant-description">ออกเสียง "ล" เดี่ยว</p>
+                </div>
+                
+                <div class="consonant-examples">
+                    <div class="example-item">
+                        <div class="example-word">ball</div>
+                        <div class="example-phonetic">/bɔːl/</div>
+                        <button class="word-sound" data-word="ball">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">hello</div>
+                        <div class="example-phonetic">/həˈləʊ/</div>
+                        <button class="word-sound" data-word="hello">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">pillow</div>
+                        <div class="example-phonetic">/ˈpɪl.əʊ/</div>
+                        <button class="word-sound" data-word="pillow">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sound-buttons">
+                    <button class="sound-button">
+                        <i class="fas fa-wave-square"></i> ฟังเสียงพยัญชนะคู่
+                    </button>
+                </div>
+            </div>
+            
+            <!-- ss -->
+            <div class="consonant-card" style="border-top-color: #b5ead7;">
+                <div class="consonant-header">
+                    <div class="consonant-icon color-scheme-5">ss</div>
+                    <h3 class="consonant-title">SS</h3>
+                    <p class="consonant-description">ออกเสียง "ส" เดี่ยว</p>
+                </div>
+                
+                <div class="consonant-examples">
+                    <div class="example-item">
+                        <div class="example-word">class</div>
+                        <div class="example-phonetic">/klɑːs/</div>
+                        <button class="word-sound" data-word="class">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">dress</div>
+                        <div class="example-phonetic">/dres/</div>
+                        <button class="word-sound" data-word="dress">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">grass</div>
+                        <div class="example-phonetic">/ɡrɑːs/</div>
+                        <button class="word-sound" data-word="grass">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sound-buttons">
+                    <button class="sound-button">
+                        <i class="fas fa-wave-square"></i> ฟังเสียงพยัญชนะคู่
+                    </button>
+                </div>
+            </div>
+            
+            <!-- zz -->
+            <div class="consonant-card" style="border-top-color: #c7ceea;">
+                <div class="consonant-header">
+                    <div class="consonant-icon color-scheme-6">zz</div>
+                    <h3 class="consonant-title">ZZ</h3>
+                    <p class="consonant-description">ออกเสียง "ซ" เดี่ยว</p>
+                </div>
+                
+                <div class="consonant-examples">
+                    <div class="example-item">
+                        <div class="example-word">pizza</div>
+                        <div class="example-phonetic">/ˈpiːt.sə/</div>
+                        <button class="word-sound" data-word="pizza">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">jazz</div>
+                        <div class="example-phonetic">/dʒæz/</div>
+                        <button class="word-sound" data-word="jazz">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="example-item">
+                        <div class="example-word">buzz</div>
+                        <div class="example-phonetic">/bʌz/</div>
+                        <button class="word-sound" data-word="buzz">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="sound-buttons">
+                    <button class="sound-button">
+                        <i class="fas fa-wave-square"></i> ฟังเสียงพยัญชนะคู่
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Section -->
+        <div class="interactive-section">
+            <h2 class="section-title">แบบฝึกหัดฝึกฝนพยัญชนะคู่</h2>
+            
+            <div class="game-container">
+                <div class="game-box">
+                    <h3 class="game-title">เกมเติมพยัญชนะคู่ในคำ</h3>
+                    <p>เติมพยัญชนะคู่ที่หายไปให้ถูกต้อง!</p>
+                    
+                    <div class="game-content">
+                        <div class="puzzle-image" id="puzzle-image">🐇</div>
+                        <div class="puzzle-container">
+                            <div class="puzzle-letter">r</div>
+                            <div class="puzzle-letter">a</div>
+                            <div class="puzzle-blank" id="consonant-blank">?</div>
+                            <div class="puzzle-letter">i</div>
+                            <div class="puzzle-letter">t</div>
+                        </div>
+                    </div>
+                    
+                    <div class="options-container">
+                        <button class="consonant-option" data-consonant="bb">bb</button>
+                        <button class="consonant-option" data-consonant="dd">dd</button>
+                        <button class="consonant-option" data-consonant="ff">ff</button>
+                        <button class="consonant-option" data-consonant="ll">ll</button>
+                        <button class="consonant-option" data-consonant="ss">ss</button>
+                        <button class="consonant-option" data-consonant="zz">zz</button>
+                    </div>
+                    
+                    <button class="game-button" id="check-puzzle">ตรวจคำตอบ</button>
+                    <button class="game-button" id="next-puzzle" style="background: #ff6b6b;">คำถัดไป</button>
+                    <div class="result-message" id="puzzle-result"></div>
+                </div>
+                
+                <div class="game-box">
+                    <h3 class="game-title">เกมจับคู่พยัญชนะคู่</h3>
+                    <p>จับคู่คำศัพท์กับพยัญชนะคู่ที่ถูกต้อง!</p>
+                    
+                    <div class="game-content" id="matching-game">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                            <div class="word-option" data-word="rabbit" draggable="true">rabbit</div>
+                            <div class="consonant-group" data-consonant="bb">BB</div>
+                            <div class="word-option" data-word="ladder" draggable="true">ladder</div>
+                            <div class="consonant-group" data-consonant="dd">DD</div>
+                            <div class="word-option" data-word="coffee" draggable="true">coffee</div>
+                            <div class="consonant-group" data-consonant="ff">FF</div>
+                            <div class="word-option" data-word="ball" draggable="true">ball</div>
+                            <div class="consonant-group" data-consonant="ll">LL</div>
+                        </div>
+                    </div>
+                    
+                    <button class="game-button" id="check-match">ตรวจคำตอบ</button>
+                    <button class="game-button" id="reset-match" style="background: #ff6b6b;">เริ่มใหม่</button>
+                    <div class="result-message" id="match-result"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>เว็บไซต์การเรียนรู้โฟนิกส์สำหรับนักเรียนประถมศึกษา</p>
+            <p class="creator">สร้างโดย KruBank Jirayu Kerdmanee</p>
+        </div>
+    </div>
+
+    <script>
+        // ข้อมูลสำหรับเกม
+        const doubleConsonantWords = [
+            { word: "rabbit", consonant: "bb", image: "🐇" },
+            { word: "bubble", consonant: "bb", image: "🫧" },
+            { word: "ladder", consonant: "dd", image: "🪜" },
+            { word: "paddle", consonant: "dd", image: "🛶" },
+            { word: "coffee", consonant: "ff", image: "☕" },
+            { word: "office", consonant: "ff", image: "🏢" },
+            { word: "ball", consonant: "ll", image: "⚽" },
+            { word: "hello", consonant: "ll", image: "👋" },
+            { word: "class", consonant: "ss", image: "👨‍🏫" },
+            { word: "dress", consonant: "ss", image: "👗" },
+            { word: "pizza", consonant: "zz", image: "🍕" },
+            { word: "jazz", consonant: "zz", image: "🎷" }
+        ];
+
+        // ฟังก์ชันสำหรับเล่นเสียง
+        function playSound(text, rate = 0.8, pitch = 1.0) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = rate;
+            utterance.pitch = pitch;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // ฟังก์ชันย้อนกลับ
+        function goBack() {
+            alert('กำลังกลับไปหน้า Dashboard...');
+            // ในเว็บจริง: window.location.href = 'dashboard.html';
+        }
+
+        // ตั้งค่า event listeners เมื่อโหลดหน้าเสร็จ
+        document.addEventListener('DOMContentLoaded', function() {
+            // ตั้งค่า event สำหรับปุ่มเสียง
+            document.querySelectorAll('.word-sound').forEach(button => {
+                button.addEventListener('click', function() {
+                    const word = this.getAttribute('data-word');
+                    playSound(word, 0.7, 1.0);
+                    
+                    // เอฟเฟ็กต์ปุ่ม
+                    this.style.backgroundColor = '#ff6b6b';
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                    }, 500);
+                });
+            });
+            
+            // ตั้งค่า event สำหรับปุ่มเสียงพยัญชนะคู่
+            document.querySelectorAll('.sound-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.consonant-card');
+                    if (card) {
+                        const consonant = card.querySelector('.consonant-title').textContent;
+                        playSound(consonant, 0.6, 1.1);
+                        
+                        // เอฟเฟ็กต์ปุ่ม
+                        this.style.backgroundColor = '#ff6b6b';
+                        setTimeout(() => {
+                            this.style.backgroundColor = '';
+                        }, 500);
+                    }
+                });
+            });
+            
+            // เกมเติมพยัญชนะคู่
+            let currentPuzzle = null;
+            const puzzleImage = document.getElementById('puzzle-image');
+            const consonantBlank = document.getElementById('consonant-blank');
+            const puzzleResult = document.getElementById('puzzle-result');
+            let selectedConsonant = null;
+            
+            // สุ่มปริศนา
+            function generatePuzzle() {
+                const randomIndex = Math.floor(Math.random() * doubleConsonantWords.length);
+                currentPuzzle = doubleConsonantWords[randomIndex];
+                
+                // แสดงภาพ
+                puzzleImage.textContent = currentPuzzle.image;
+                
+                // รีเซ็ตการเลือก
+                puzzleResult.textContent = '';
+                selectedConsonant = null;
+                document.querySelectorAll('.consonant-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+            }
+            
+            // เลือกพยัญชนะ
+            document.querySelectorAll('.consonant-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // รีเซ็ตการเลือก
+                    document.querySelectorAll('.consonant-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // เลือกอันนี้
+                    this.classList.add('selected');
+                    selectedConsonant = this.getAttribute('data-consonant');
+                    consonantBlank.textContent = selectedConsonant;
+                });
+            });
+            
+            // ตรวจสอบคำตอบ
+            document.getElementById('check-puzzle').addEventListener('click', function() {
+                if (!selectedConsonant) {
+                    puzzleResult.textContent = 'กรุณาเลือกพยัญชนะคู่ก่อนตรวจสอบ!';
+                    puzzleResult.style.color = '#ff6b6b';
+                    return;
+                }
+                
+                if (selectedConsonant === currentPuzzle.consonant) {
+                    puzzleResult.textContent = 'ถูกต้อง! เยี่ยมมาก!';
+                    puzzleResult.style.color = '#4a69bd';
+                    playSound(currentPuzzle.word, 0.7, 1.0);
+                } else {
+                    puzzleResult.textContent = 'ยังไม่ถูกต้อง! ลองใหม่อีกครั้ง';
+                    puzzleResult.style.color = '#ff6b6b';
+                }
+            });
+            
+            // คำถัดไป
+            document.getElementById('next-puzzle').addEventListener('click', generatePuzzle);
+            
+            // เริ่มเกมแรก
+            generatePuzzle();
+            
+            // เกมจับคู่พยัญชนะคู่
+            const matchResult = document.getElementById('match-result');
+            
+            // ตั้งค่า drag and drop
+            document.querySelectorAll('.word-option').forEach(option => {
+                option.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', this.textContent);
+                });
+            });
+            
+            document.querySelectorAll('.consonant-group').forEach(group => {
+                group.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                });
+                
+                group.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    const word = e.dataTransfer.getData('text/plain');
+                    const correctConsonant = doubleConsonantWords.find(w => w.word === word)?.consonant;
+                    const groupConsonant = this.getAttribute('data-consonant');
+                    
+                    if (correctConsonant === groupConsonant) {
+                        this.style.backgroundColor = '#b5ead7';
+                        matchResult.textContent = 'ถูกต้อง! ' + word + ' → ' + groupConsonant;
+                        matchResult.style.color = '#4a69bd';
+                        
+                        // อ่านเสียงคำ
+                        playSound(word, 0.7, 1.0);
+                    } else {
+                        this.style.backgroundColor = '#ffb7b2';
+                        matchResult.textContent = 'ยังไม่ถูกต้อง! ลองใหม่อีกครั้ง';
+                        matchResult.style.color = '#ff6b6b';
+                    }
+                    
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                        matchResult.textContent = '';
+                    }, 2000);
+                });
+            });
+            
+            // ปุ่มตรวจคำตอบเกมจับคู่
+            document.getElementById('check-match').addEventListener('click', function() {
+                matchResult.textContent = 'เกมนี้ต้องลากคำไปวางในกลุ่มพยัญชนะ!';
+                matchResult.style.color = '#4a69bd';
+            });
+            
+            // ปุ่มเริ่มใหม่
+            document.getElementById('reset-match').addEventListener('click', function() {
+                document.querySelectorAll('.consonant-group').forEach(group => {
+                    group.style.backgroundColor = '';
+                });
+                matchResult.textContent = '';
+            });
+        });
+    </script>
+</body>
+</html>
